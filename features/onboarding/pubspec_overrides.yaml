@@ -1,0 +1,10 @@
+# melos_managed_dependency_overrides: authentication,common,dependencies,resources
+dependency_overrides:
+  authentication:
+    path: ../../domains/authentication
+  common:
+    path: ../../shared_libraries/common
+  dependencies:
+    path: ../../shared_libraries/dependencies
+  resources:
+    path: ../../resources/resources

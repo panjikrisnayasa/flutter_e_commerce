@@ -1,0 +1,18 @@
+# melos_managed_dependency_overrides: cart,common,component,core,dependencies,payment,product,resources
+dependency_overrides:
+  cart:
+    path: ../../domains/cart
+  common:
+    path: ../../shared_libraries/common
+  component:
+    path: ../../shared_libraries/component
+  core:
+    path: ../../shared_libraries/core
+  dependencies:
+    path: ../../shared_libraries/dependencies
+  payment:
+    path: ../../domains/payment
+  product:
+    path: ../../domains/product
+  resources:
+    path: ../../resources/resources

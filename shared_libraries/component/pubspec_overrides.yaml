@@ -1,0 +1,14 @@
+# melos_managed_dependency_overrides: cart,common,core,dependencies,product,resources
+dependency_overrides:
+  cart:
+    path: ../../domains/cart
+  common:
+    path: ../common
+  core:
+    path: ../core
+  dependencies:
+    path: ../dependencies
+  product:
+    path: ../../domains/product
+  resources:
+    path: ../../resources/resources

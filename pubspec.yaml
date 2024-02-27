@@ -77,6 +77,8 @@ dependencies:
   dependencies:
     path: shared_libraries/dependencies
 
+  melos: ^3.4.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

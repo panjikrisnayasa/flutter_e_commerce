@@ -1,0 +1,16 @@
+# melos_managed_dependency_overrides: authentication,common,component,dependencies,product,profile,resources
+dependency_overrides:
+  authentication:
+    path: ../../domains/authentication
+  common:
+    path: ../../shared_libraries/common
+  component:
+    path: ../../shared_libraries/component
+  dependencies:
+    path: ../../shared_libraries/dependencies
+  product:
+    path: ../../domains/product
+  profile:
+    path: ../../domains/profile
+  resources:
+    path: ../../resources/resources

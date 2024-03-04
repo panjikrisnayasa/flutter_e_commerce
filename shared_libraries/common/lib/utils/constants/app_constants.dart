@@ -11,7 +11,7 @@ class AppConstants {
 class CachedKey {
   const CachedKey();
 
-  String get onBoardingKey => 'onBoardingKey';
+  String get onboardingKey => 'onboardingKey';
 
   String get tokenKey => 'tokenKey';
 
@@ -70,7 +70,8 @@ class ErrorMessage {
 
   String get formNotEmpty => "username and password must not empty";
 
-  String get failedGetOnBoarding => 'failed get onboarding status';
+  String get failedGetIsOnBoardingOpened =>
+      'failed to get is onboarding opened status';
 
   String get failedGetToken => 'failed get onboarding status';
 

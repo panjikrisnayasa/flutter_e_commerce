@@ -2,7 +2,7 @@ import 'package:common/utils/state/view_data_state.dart';
 import 'package:dependencies/equatable/equatable.dart';
 
 class SplashState extends Equatable {
-  final ViewData splashState;
+  final ViewData<bool> splashState;
 
   const SplashState({
     required this.splashState,

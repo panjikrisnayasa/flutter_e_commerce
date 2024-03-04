@@ -1,3 +1,4 @@
+import 'package:common/utils/navigation/router/auth_router.dart';
 import 'package:common/utils/navigation/router/onboarding_router.dart';
 import 'package:common/utils/state/view_data_state.dart';
 import 'package:dependencies/bloc/bloc.dart';
@@ -13,6 +14,7 @@ class SplashScreen extends StatelessWidget {
   SplashScreen({super.key});
 
   final OnboardingRouter _onboardingRouter = sl();
+  final AuthRouter _authRouter = sl();
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +24,13 @@ class SplashScreen extends StatelessWidget {
           final status = state.splashState.status;
 
           if (status.isHasData) {
-            _onboardingRouter.navigateToOnboarding();
+            final data = state.splashState.data ?? false;
+
+            if (data) {
+              _authRouter.navigateToSignIn();
+            } else {
+              _onboardingRouter.navigateToOnboarding();
+            }
           }
         },
         child: Container(

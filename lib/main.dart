@@ -4,7 +4,9 @@ import 'package:common/utils/navigation/router/app_routes.dart';
 import 'package:dependencies/bloc/bloc.dart';
 import 'package:dependencies/firebase/firebase.dart';
 import 'package:dependencies/flutter_screenutil/flutter_screenutil.dart';
+import 'package:dependencies/get_it/get_it.dart';
 import 'package:flutter/material.dart';
+import 'package:onboarding/presentation/bloc/onboarding_bloc/onboarding_cubit.dart';
 import 'package:onboarding/presentation/bloc/splash_bloc/splash_cubit.dart';
 import 'package:onboarding/presentation/ui/onboarding_screen.dart';
 import 'package:onboarding/presentation/ui/splash_screen.dart';
@@ -33,7 +35,9 @@ class MyApp extends StatelessWidget {
         home: MultiBlocProvider(
           providers: [
             BlocProvider(
-              create: (_) => SplashCubit()..initSplash(),
+              create: (_) => SplashCubit(
+                getIsOnboardingOpenedUseCase: sl(),
+              )..initSplashAndGetIsOnboardingOpened(),
             )
           ],
           child: SplashScreen(),
@@ -47,7 +51,12 @@ class MyApp extends StatelessWidget {
               );
             case AppRoutes.onboarding:
               return MaterialPageRoute(
-                builder: (_) => OnboardingScreen(),
+                builder: (_) => BlocProvider(
+                  create: (_) => OnboardingCubit(
+                    setIsOnboardingOpenedUseCase: sl(),
+                  ),
+                  child: OnboardingScreen(),
+                ),
               );
             case AppRoutes.signIn:
               return MaterialPageRoute(
